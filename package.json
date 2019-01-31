@@ -13,5 +13,8 @@
     "node"
   ],
   "author": "lopezPL",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "colors": "^1.3.3"
+  }
 }

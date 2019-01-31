@@ -1,4 +1,5 @@
 var os = require('os');
+var colors = require('colors');
 var reformat = require("./timeFormat").timeMachine;
 
 function getOSinfo() {
@@ -14,12 +15,12 @@ function getOSinfo() {
         info = "Windows";
     }
 
-    console.log("System: ", info);
-    console.log("Release: ", release);
-    console.log("CPU model: ", cpu);
-    console.log("Uptime: ", reformat(uptime));
-    console.log("User name: ", userInfo.username);
-    console.log("Home dir: ", userInfo.homedir);
+    console.log("System: ".grey, info);
+    console.log("Release: ".red, release);
+    console.log("CPU model: ".blue, cpu);
+    console.log("Uptime: ".green, reformat(uptime));
+    console.log("User name: ".yellow, userInfo.username);
+    console.log("Home dir: ".white, userInfo.homedir);
 }
 
 exports.print = getOSinfo();
