@@ -1,11 +1,21 @@
+var OSinfo = require("./modules/OSinfo");
+var EventEmitter = require("events").EventEmitter;
+var emitter = new EventEmitter();
+
 process.stdin.setEncoding("utf-8");
+emitter.on("beforeCommand", function (instruction) {
+    console.log("You wrote: " + instruction + ", trying to run command");
+});
+emitter.on("afterCommand", function () {
+    console.log("Finished command");
+});
 
 process.stdin.on("readable", function () {
    var input = process.stdin.read();
-   var OSinfo = require("./modules/OSinfo").print;
 
    if (input !== null) {
        var instruction = input.trim();
+       emitter.emit("beforeCommand", instruction);
 
        switch (instruction) {
            case "/exit":
@@ -16,10 +26,11 @@ process.stdin.on("readable", function () {
                process.stdout.write("hello\n");
                break;
            case "/getOSinfo":
-               OSinfo;
+               OSinfo.print();
                break;
            default:
                process.stdout.write("Wrong instruction!\n");
        }
+       emitter.emit("afterCommand");
    }
 });

@@ -23,4 +23,4 @@ function getOSinfo() {
     console.log("Home dir: ".white, userInfo.homedir);
 }
 
-exports.print = getOSinfo();
+exports.print = getOSinfo;
