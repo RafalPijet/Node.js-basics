@@ -2,7 +2,7 @@ process.stdin.setEncoding("utf-8");
 
 process.stdin.on("readable", function () {
    var input = process.stdin.read();
-   var OSinfo = require("../modules/OSinfo").print;
+   var OSinfo = require("./modules/OSinfo").print;
 
    if (input !== null) {
        var instruction = input.trim();
