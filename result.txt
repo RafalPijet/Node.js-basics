@@ -1,1 +1,1 @@
-.git,cat.jpeg,index.js,modules,node_modules,package-lock.json,package.json,result.txt,task_17_7.js,tekst.txt
+.DS_Store,.git,.gitignore,cat.jpeg,index.js,modules,node_modules,package-lock.json,package.json,result.txt,server.js,task_17_7.js,tekst.txt
